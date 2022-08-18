@@ -1,0 +1,10 @@
+header{
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    border-style: solid;
+}
+
+.headbutton{
+    margin: 1em;
+}
