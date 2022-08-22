@@ -1,10 +1,81 @@
-header{
+body{
     display: flex;
-    justify-content: center;
-    margin: 1em;
-    border-style: solid;
+    flex-direction: column;
+    background-color: #252525;
 }
 
-.headbutton{
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/* --------------------------------- */
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+}
+
+.menu__btn{
     margin: 1em;
 }
+
+.logo{
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+/* --------------------------------- */
+
+.video{
+    display: flex;
+    height: 25pc;
+    width: auto;
+    margin: auto;
+}
+
+.video__logo{
+    height: 25pc;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------- */
+
+.best_m{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.best_m__title{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+}
+
+.best_m__gabari{
+    border: blue solid;
+    display: flex;
+    width: 720px;
+    height: auto;
+    justify-content: center;
+    margin:auto;
+}
+
+.best_m__gabari__test{
+    border: red solid ;
+    display: flex;
+    justify-content: center;
+    margin:10px;
+}
+
