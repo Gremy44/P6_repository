@@ -1,0 +1,128 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #252525;
+}
+
+/* --------------------------------- */
+/* ------------- header  ----------- */
+/* --------------------------------- */
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
+}
+
+.menu__btn{
+    margin: 1em;
+}
+
+.logo{
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+/* --------------------------------- */
+
+.video{
+    display: flex;
+    height: 25pc;
+    width: auto;
+    margin: auto;
+}
+
+.video__logo{
+    height: 25pc;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------- */
+
+.best_m{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.best_m_2{
+    border: blue solid;
+    display: flex;
+    height: 200px;
+    width: 720px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    image-rendering: linear-gradient(90deg, rgba(37,37,37,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, rgba(37,37,37,1) 100%);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.best_m__title{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+}
+
+.best_m_2_gabari{
+    display: flex;
+    z-index: 1;
+}
+
+.degrade{
+    height: 200px;
+    width: 720px;
+    justify-content: center;
+    align-items: center;
+}
+
+#output{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#output :hover{
+    animation-duration: 1s;
+    scale: 110%;
+    filter: brightness(150%)
+}
+
+/* --------------------------------- */
+/* -----------   footer    --------- */
+/* --------------------------------- */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:3em;
+}
+
+.tf{
+    margin: auto;
+    justify-content: left;
+}
+
+.icon_footer{
+    justify-content: right;
+}
+
+.icon_footer__ic{
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+}
