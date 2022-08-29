@@ -90,12 +90,12 @@ header{
     align-items: center;
 }
 
-#output{
+#best_movies{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#output :hover{
+#best_movies :hover{
     animation-duration: 1s;
     scale: 110%;
     filter: brightness(150%)
