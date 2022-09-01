@@ -1,7 +1,7 @@
 body{
     display: flex;
     flex-direction: column;
-    background-color: #252525;
+    background-color: #ffffff;
 }
 
 /* --------------------------------- */
@@ -34,7 +34,23 @@ header{
 }
 
 /* --------------------------------- */
+img{
+   height: 270px; 
+   width: auto;
+   padding : 0.5%;
+   border-radius: 1em;
+}
 
+img:hover{
+    scale: 105%;
+    transition: 50ms;
+}
+
+h2{
+    justify-content: center;
+    text-align: center;
+    color: azure;
+}
 .video{
     display: flex;
     height: 25pc;
@@ -50,55 +66,34 @@ header{
 }
 
 /* --------------------------------- */
-
-.best_m{
+#best{
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    align-items: stretch;
     padding: 1em;
 }
+#best:hover{
+    
+}
 
-.best_m_2{
-    border: blue solid;
+
+div#images_best, div#images_best_action, div#images_best_animation, div#images_best_sf {
     display: flex;
-    height: 200px;
-    width: 720px;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    image-rendering: linear-gradient(90deg, rgba(37,37,37,1) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 80%, rgba(37,37,37,1) 100%);
-    overflow: hidden;
-    z-index: 2;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
 }
 
-.best_m__title{
-    display: flex;
-    justify-content: center;
-    margin:10px;
+div#images_best, div#images_best_action, div#images_best_animation, div#images_best_sf:hover{
+    overflow-y: hidden;
+    overflow-x: auto;
 }
-
-.best_m_2_gabari{
-    display: flex;
-    z-index: 1;
-}
-
-.degrade{
-    height: 200px;
-    width: 720px;
-    justify-content: center;
-    align-items: center;
-}
-
-#best_movies{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#best_movies :hover{
-    animation-duration: 1s;
-    scale: 110%;
-    filter: brightness(150%)
+#recap_film{
+    display:block;
 }
 
 /* --------------------------------- */
