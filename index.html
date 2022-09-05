@@ -5,17 +5,28 @@
     <meta charset="UTF-8">
     <title>JustStreamIt</title>
     <link rel="stylesheet" href="assets/css/style_02.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,500;1,700&display=swap" rel="stylesheet">
     <script src="assets/scripts/script.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="assets/images/jsti_logo.png" alt="jsti_logo">
+            <!--<img src="assets/images/jsti_logo.png" alt="jsti_logo">-->
+            <h1>JustStreamIt</h1>
         </div>
         <ul class="menu">
-            <li class="menu__btn" href="">Accueuil</li>
-            <li class="menu__btn" href="">Categories</li>
+            <li class="menu__btn" ><a href="">Accueuil</a></li>
+            <li class="menu__btn" ><a href="">Categorie</a>
+                <ul class="sous">
+                    <li><a href="#best">Mieux notés</a></li>
+                    <li><a href="#best_action">Action</a></li>
+                    <li><a href="#best_animation">Animation</a></li>
+                    <li><a href="#best_sf">Sci-fi</a></li>
+                </ul>
+            </li>
         </ul>
     </header>
 
@@ -31,8 +42,14 @@
 
         
         <div id="ancreModale" class="modale">
-            <div class="modalContent">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero magni blanditiis, beatae saepe fuga eum?</p>
+            <div class="modaleContent">
+                <div>
+                    <h3 id ="titre"></h3>
+                </div>
+                <div class="infoModale">
+                    <div id ="affiche" ></div>
+                    <div id ="infosFilm" ></div>
+                </div>
                 <a href="#" class="close">&times;</a>
             </div>
         </div>
