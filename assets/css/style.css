@@ -103,8 +103,6 @@ a{
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: left;
-    position: relative;
     margin: 1.5vw;
     z-index: 2;
     min-height: 400px;
