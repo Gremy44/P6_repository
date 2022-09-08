@@ -121,7 +121,7 @@ img.overview__img{
 
 p.overview__titre{
     position: absolute;
-    font-size: 10vw;
+    font-size: 5vw;
     top: 5%;
     margin-left: 2%;
 }
@@ -134,7 +134,7 @@ button.overview__infos{
     color: var(--baseColor);
     top: 60%;
     margin-left: 2%;
-    padding: 2vh;
+    padding: var(--basePadding);
 
     box-shadow: 0 0 10px #000;
 }
