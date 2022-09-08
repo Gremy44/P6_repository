@@ -86,7 +86,6 @@ class Request {
     }
 
     run(){
-        console.log("coucou")
         // Construct the page
         fetch(this.url)
             .then(values => values.json())
@@ -129,4 +128,4 @@ function runAllRequest(){
     bestSciFiRequest.run();
 }
 
-setInterval(runAllRequest(),1000);
+setInterval(runAllRequest,10000);
