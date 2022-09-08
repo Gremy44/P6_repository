@@ -7,12 +7,15 @@ class Request {
     }
 
     static retrieveId(e){
-        //bloque le scroll
+        /* Retrieve Id from image when she is clicking, make an API request with this id for grad movie's
+        informations and return them to html page */
+
+        // lock the scroll
         const body = document.getElementById("body");
         body.style.overflow = "hidden";
         document.getElementById("close").addEventListener('click', () =>{body.style.overflow="auto"})
 
-        // nettoie les informations precedentes
+        // clean modal page
         const infos = document.getElementById("infosFilm");
         while(infos.firstChild){
             infos.removeChild(infos.lastChild);
@@ -28,7 +31,7 @@ class Request {
             titre.removeChild(titre.lastChild);
         }
 
-        // cree la requete
+        // request
         const urlFilm = `http://localhost:8000/api/v1/titles/${e['path'][1].id}`;
 
         fetch(urlFilm)
@@ -55,6 +58,7 @@ class Request {
     }
 
     overview(){
+        /* make the resquets for the picture overview of the best movie */
         fetch(this.url)
             .then(values => values.json())
             .then(infos => {
@@ -62,28 +66,27 @@ class Request {
                 fetch(urlInfos)
                     .then(values2 => values2.json())
                     .then(infos2 => {
-                        // Capte les informations
-                        
-                        //image
-                        document.getElementById('video').innerHTML +=
+                        // picture
+                        document.getElementById('overview').innerHTML +=
                             `<img class="overview__img" src="${infos.results[0]['image_url']}"></img>`
-                        //tite
-                        document.getElementById('video').innerHTML +=
+                        // title
+                        document.getElementById('overview').innerHTML +=
                             `<p class="overview__titre">${infos.results[0]['title']}</p>`
-                        //infos
-                        document.getElementById('video').innerHTML +=
+                        // infos
+                        document.getElementById('overview').innerHTML +=
                             `<p class="overview__desc">${infos2['description']}</p>`
-                        //bouton
-                        document.getElementById('video').innerHTML += 
+                        // button
+                        document.getElementById('overview').innerHTML += 
                             `<a id = "${infos2['id']}" href='#ancreModale'><button class="overview__infos">Informations</button></a>`;
 
-                        //evenement pour renvoi sur la modale
+                        // event for clicking
                         document.getElementById(infos2['id']).addEventListener('click', Request.retrieveId);
                     })
             })
     }
 
     run(){
+        // Construct the page
         fetch(this.url)
             .then(values => values.json())
             .then(infos => {
@@ -107,7 +110,7 @@ class Request {
 
 let nbItems = 7;
 // cree l objet overview du haut de page
-let overview = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score%2C-votes&page_size=${1}`, "Overview", "video");
+let overview = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score%2C-votes&page_size=${1}`, "Overview", "overview");
 // cree les objets section
 let bestMovieRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score%2C-votes&page_size=${nbItems}`, "Meilleurs films", "best");
 let bestActionRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score%2C-votes&genre=action&page_size=${nbItems}`,  "Meilleurs films d'action", "best_action");
@@ -124,7 +127,3 @@ setInterval(bestActionRequest.run(),1000);
 setInterval(bestAnimationRequest.run(),1000);
 
 setInterval(bestSciFiRequest.run(),1000);
-
-
-
-
