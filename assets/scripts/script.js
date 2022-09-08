@@ -100,6 +100,7 @@ class Request {
                 div.innerHTML += `<div id = ${nameIdImage}></div>`;
 
                 for(let i = 0; i < infos.results.length; i++ ){
+
                     // create overview with id api in id html
                     document.getElementById(nameIdImage).innerHTML += 
                     `<a id = "${infos.results[i]['id']}" href='#ancreModale'><img class = "${nameIdImage}" src = "${infos.results[i].image_url}"></a>`;
@@ -113,18 +114,19 @@ let nbItems = 7;
 // create overview
 let overview = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&-votes&page_size=${1}`, "Overview", "overview");
 // create object
-let bestMovieRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=${nbItems}`, "Meilleurs films", "best");
+let bestMovieRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score,votes&page_size=${nbItems}`, "Meilleurs films", "best");
 let bestActionRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=action&page_size=${nbItems}`,  "Meilleurs films d'action", "best_action");
 let bestAnimationRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=animation&page_size=${nbItems}`,  "Meilleurs films d'animation", "best_animation");
 let bestSciFiRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=sci-fi&page_size=${nbItems}`,  "Meilleurs films de Sci-Fi", "best_sf");
 
 //call
-setInterval(overview.overview(),1000);
+function runAllRequest(){
+    console.log(new Date());
+    overview.overview();
+    bestMovieRequest.run();
+    bestActionRequest.run();
+    bestAnimationRequest.run();
+    bestSciFiRequest.run();
+}
 
-setInterval(bestMovieRequest.run(),1000);
-
-setInterval(bestActionRequest.run(),1000);
-
-setInterval(bestAnimationRequest.run(),1000);
-
-setInterval(bestSciFiRequest.run(),1000);
+setInterval(runAllRequest(),1000);
