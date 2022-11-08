@@ -118,8 +118,25 @@ let bestActionRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_b
 let bestAnimationRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=animation&page_size=${nbItems}`,  "Meilleurs films d'animation", "best_animation");
 let bestSciFiRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=sci-fi&page_size=${nbItems}`,  "Meilleurs films de Sci-Fi", "best_sf");
 
-//call
+//recall
 function runAllRequest(){
+    const clearBest = document.getElementById("best");
+        while(clearBest.firstChild){
+            clearBest.removeChild(clearBest.lastChild);
+        }
+    const clearBestAction = document.getElementById("best_action");
+        while(clearBestAction.firstChild){
+            clearBestAction.removeChild(clearBestAction.lastChild);
+        }
+    const clearBestAnimation = document.getElementById("best_animation");
+        while(clearBestAnimation.firstChild){
+            clearBestAnimation.removeChild(clearBestAnimation.lastChild);
+        }
+    const clearBestSf = document.getElementById("best_sf");
+        while(clearBestSf.firstChild){
+            clearBestSf.removeChild(clearBestSf.lastChild);
+        }
+    
     console.log(new Date());
     overview.overview();
     bestMovieRequest.run();
@@ -128,4 +145,13 @@ function runAllRequest(){
     bestSciFiRequest.run();
 }
 
+// initial call
+
+overview.overview();
+bestMovieRequest.run();
+bestActionRequest.run();
+bestAnimationRequest.run();
+bestSciFiRequest.run();
+
+// auto refresh
 setInterval(runAllRequest,10000);
