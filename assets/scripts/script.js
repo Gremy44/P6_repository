@@ -109,15 +109,6 @@ class Request {
     }
 } 
 
-let nbItems = 7;
-// create overview
-let overview = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=${1}`, "Overview", "overview");
-// create object
-let bestMovieRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=${nbItems}`, "Meilleurs films", "best");
-let bestActionRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=action&page_size=${nbItems}`,  "Meilleurs films d'action", "best_action");
-let bestAnimationRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=animation&page_size=${nbItems}`,  "Meilleurs films d'animation", "best_animation");
-let bestSciFiRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=sci-fi&page_size=${nbItems}`,  "Meilleurs films de Sci-Fi", "best_sf");
-
 //recall
 function runAllRequest(){
 
@@ -151,8 +142,16 @@ function runAllRequest(){
     bestSciFiRequest.run();
 }
 
-// initial call
+let nbItems = 7;
+// create overview
+let overview = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=${1}`, "Overview", "overview");
+// create object
+let bestMovieRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=${nbItems}`, "Meilleurs films", "best");
+let bestActionRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=action&page_size=${nbItems}`,  "Meilleurs films d'action", "best_action");
+let bestAnimationRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=animation&page_size=${nbItems}`,  "Meilleurs films d'animation", "best_animation");
+let bestSciFiRequest = new Request(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=sci-fi&page_size=${nbItems}`,  "Meilleurs films de Sci-Fi", "best_sf");
 
+// initial call
 overview.overview();
 bestMovieRequest.run();
 bestActionRequest.run();
